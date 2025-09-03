@@ -45,7 +45,7 @@ logistics_route_opt_project/
 ├── README.md                  # This file
 │
 └── app/
-    ├── streamlit_app.py       # Main app entry
+    ├── Home.py                # Main app entry
     └── pages/
         ├── 1_Overview.py
         ├── 2_Routing_Simulator.py
@@ -73,8 +73,8 @@ Each row represents a delivery order with:
 ##### 1. Clone & install requirements
 
 ```bash
-git clone <your-repo-url>
-cd logistics_route_opt_project
+git clone https://github.com/tripleaceme/route-optimization.git
+cd route-optimization
 pip install -r requirements.txt
 ```
 
@@ -93,26 +93,17 @@ This creates `logistics_deliveries.csv` (5,000 rows).
    ```sql
    CREATE DATABASE logistics_db;
    ```
-2. Set up `.env` file in the root:
-
-   ```ini
-   MYSQL_HOST=localhost
-   MYSQL_PORT=3306
-   MYSQL_USER=root
-   MYSQL_PASSWORD=yourpassword
-   MYSQL_DB=logistics_db
-   ```
-3. Run:
+2. Run:
 
    ```bash
-   python upload_to_mysql.py --csv logistics_deliveries.csv
+   python upload_to_mysql.py
    ```
 
 ##### 4. Run the Streamlit app
 
 ```bash
 cd app
-streamlit run streamlit_app.py
+streamlit run home.py
 ```
 
 ---
